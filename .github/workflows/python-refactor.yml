@@ -36,10 +36,6 @@ jobs:
       - name: Run autopep8 (fix style)
         run: autopep8 --in-place --aggressive --aggressive -r .
 
-      - name: Run pyupgrade (modernize syntax)
-        run: |
-          find . -name "*.py" -exec pyupgrade --py311-plus {} +
-
       - name: Run flake8 (lint)
         run: |
           flake8 . || echo "flake8 warnings found"
